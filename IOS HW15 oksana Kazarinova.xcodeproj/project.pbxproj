@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6395AC32C309EE6008CF341 /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6395AC22C309EE6008CF341 /* DefaultTableViewCell.swift */; };
+		C6395AC52C309F0C008CF341 /* Value1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6395AC42C309F0C008CF341 /* Value1TableViewCell.swift */; };
+		C6395AC72C309F3B008CF341 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6395AC62C309F3B008CF341 /* CustomTableViewCell.swift */; };
 		C639D6E32C303ECF0009C7DA /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C639D6E22C303ECF0009C7DA /* UIImageExtension.swift */; };
 		C639D6E52C303EDC0009C7DA /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C639D6E42C303EDC0009C7DA /* UIImageViewExtension.swift */; };
 		C639D6E72C3041080009C7DA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C639D6E62C3041080009C7DA /* UIColorExtension.swift */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C6395AC22C309EE6008CF341 /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
+		C6395AC42C309F0C008CF341 /* Value1TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Value1TableViewCell.swift; sourceTree = "<group>"; };
+		C6395AC62C309F3B008CF341 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		C639D6E22C303ECF0009C7DA /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		C639D6E42C303EDC0009C7DA /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		C639D6E62C3041080009C7DA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -49,6 +55,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6395AC02C308552008CF341 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C639D6E22C303ECF0009C7DA /* UIImageExtension.swift */,
+				C639D6E42C303EDC0009C7DA /* UIImageViewExtension.swift */,
+				C639D6E62C3041080009C7DA /* UIColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C6395AC12C309E6F008CF341 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C6395AC22C309EE6008CF341 /* DefaultTableViewCell.swift */,
+				C6395AC42C309F0C008CF341 /* Value1TableViewCell.swift */,
+				C6395AC62C309F3B008CF341 /* CustomTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		C64100982C2F4A70002E5E94 = {
 			isa = PBXGroup;
 			children = (
@@ -117,9 +143,8 @@
 			children = (
 				C64100C02C2F5EDF002E5E94 /* View.swift */,
 				C64100C22C2F5F3C002E5E94 /* DetailView.swift */,
-				C639D6E22C303ECF0009C7DA /* UIImageExtension.swift */,
-				C639D6E42C303EDC0009C7DA /* UIImageViewExtension.swift */,
-				C639D6E62C3041080009C7DA /* UIColorExtension.swift */,
+				C6395AC12C309E6F008CF341 /* Cells */,
+				C6395AC02C308552008CF341 /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,10 +234,13 @@
 				C64100A52C2F4A70002E5E94 /* AppDelegate.swift in Sources */,
 				C64100C12C2F5EDF002E5E94 /* View.swift in Sources */,
 				C639D6E52C303EDC0009C7DA /* UIImageViewExtension.swift in Sources */,
+				C6395AC32C309EE6008CF341 /* DefaultTableViewCell.swift in Sources */,
 				C64100A72C2F4A70002E5E94 /* SceneDelegate.swift in Sources */,
 				C639D6E72C3041080009C7DA /* UIColorExtension.swift in Sources */,
+				C6395AC52C309F0C008CF341 /* Value1TableViewCell.swift in Sources */,
 				C64100BF2C2F5CAA002E5E94 /* Model.swift in Sources */,
 				C639D6E32C303ECF0009C7DA /* UIImageExtension.swift in Sources */,
+				C6395AC72C309F3B008CF341 /* CustomTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
