@@ -18,15 +18,22 @@ class DetailView: UIView {
        return label
    }()
 
-    private var settingIcon: UIImageView = {
+    private var detailedIcon: UIImageView = {
         let iconBG = UIImageView()
         iconBG.contentMode = .scaleAspectFit
         iconBG.layer.masksToBounds = true
         iconBG.clipsToBounds = true
         iconBG.layer.cornerRadius = 5
         iconBG.tintColor = .white
+        iconBG.layer.borderWidth = 2
+        iconBG.layer.borderColor = UIColor.white.cgColor
         iconBG.translatesAutoresizingMaskIntoConstraints = false
         return iconBG
+    }()
+
+    private lazy var icon: UIImage = {
+        let image = UIImage()
+        return image
     }()
 
    // MARK: - Initializers
@@ -45,7 +52,8 @@ class DetailView: UIView {
 
    private func setupHierarchy() {
        addSubview(message)
-       addSubview(settingIcon)
+       addSubview(detailedIcon)
+       //detailedIcon.addArrangeSubview(icon)
    }
 
    private func setupLayout() {
@@ -54,9 +62,15 @@ class DetailView: UIView {
            message.centerYAnchor.constraint(equalTo: self.centerYAnchor),
            message.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
            message.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
-           settingIcon.topAnchor.constraint(equalTo: self.topAnchor, constant: -30),
-           settingIcon.widthAnchor.constraint(equalToConstant: 50),
-           settingIcon.heightAnchor.constraint(equalToConstant: 50)
+           detailedIcon.topAnchor.constraint(equalTo: self.topAnchor, constant: -30),
+           detailedIcon.widthAnchor.constraint(equalToConstant: 50),
+           detailedIcon.heightAnchor.constraint(equalToConstant: 50)
        ])
    }
+
+    func configureView(with model: Setting) {
+        message.text = "Thank you. You pressed \(model.name.rawValue)."
+        self.backgroundColor = detailedIcon.setBGColor(colorCode: model.imageViewColorCode).backgroundColor
+        detailedIcon.image = icon.editIcon(imageName: model.icon)
+    }
 }

@@ -11,13 +11,8 @@ class View: UIView {
 
     // MARK: - Outlets
 
-    private lazy var settingsTableView: UITableView = {
+    lazy var settingsTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
-        tableView.register(DefaultTableViewCell.self, forCellReuseIdentifier: DefaultTableViewCell.identifier)
-        tableView.register(Value1TableViewCell.self, forCellReuseIdentifier: Value1TableViewCell.identifier)
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
-        tableView.dataSource = self
-        tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -29,9 +24,6 @@ class View: UIView {
         setupHierarchy()
         setupLayout()
         self.backgroundColor = .systemGray6
-        self.title = "Settings"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        //settings = Setting.settings
     }
 
     required init?(coder: NSCoder) {
@@ -52,4 +44,8 @@ class View: UIView {
             settingsTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
+
+    // MARK: Configuration
+
+    
 }

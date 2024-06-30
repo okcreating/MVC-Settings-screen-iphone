@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
     
-    private func editIcon(imageName: String) -> UIImage {
+     func editIcon(imageName: String) -> UIImage {
         let icon = UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(pointSize: 35, weight: .light, scale: .unspecified))?.withTintColor(.white, renderingMode: .alwaysOriginal)
         return icon ?? UIImage()
     }
