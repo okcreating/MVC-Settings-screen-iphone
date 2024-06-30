@@ -20,10 +20,9 @@ class Controller: UIViewController {
         super.viewDidLoad()
         view = View()
         model = SettingsModel()
-        navigationController?.title = "Settings"
+        title = "Settings"
         navigationController?.navigationBar.prefersLargeTitles = true
         configure()
-
     }
 }
 
@@ -63,6 +62,7 @@ extension Controller: UITableViewDataSource, UITableViewDelegate {
         case .customType:
             let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell
             cell?.setting = setting
+            cell?.accessoryView = UISwitch.init()
             return cell ?? UITableViewCell()
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: DefaultTableViewCell.identifier, for: indexPath) as? DefaultTableViewCell
@@ -77,6 +77,7 @@ extension Controller: UITableViewDataSource, UITableViewDelegate {
         switch model?.createModels()[indexPath.section][indexPath.row].cellType {
         case .defaultType, .value1Type:
             let detailedController = DetailController()
+            tableView.deselectRow(at: indexPath, animated: true)
             //detailedController.detailedModel = model
             navigationController?.pushViewController(detailedController, animated: true)
         default:

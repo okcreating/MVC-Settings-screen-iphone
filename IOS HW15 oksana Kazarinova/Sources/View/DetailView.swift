@@ -46,7 +46,7 @@ class DetailView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureView(with: <#T##Setting#>)
+        
     }
 
    // MARK: - Setup
@@ -73,7 +73,8 @@ class DetailView: UIView {
 
     func configureView(with model: Setting) {
         message.text = "Thank you. You pressed \(model.name.rawValue)."
-        self.backgroundColor = detailedIcon.setBGColor(colorCode: model.imageViewColorCode).backgroundColor
         detailedIcon.image = icon.editIcon(imageName: model.icon)
+        self.backgroundColor = detailedIcon.setBGColor(colorCode: model.imageViewColorCode).backgroundColor
+
     }
 }
