@@ -46,6 +46,7 @@ class DetailView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        configureView(with: <#T##Setting#>)
     }
 
    // MARK: - Setup
@@ -53,7 +54,7 @@ class DetailView: UIView {
    private func setupHierarchy() {
        addSubview(message)
        addSubview(detailedIcon)
-       //detailedIcon.addArrangeSubview(icon)
+
    }
 
    private func setupLayout() {
@@ -62,9 +63,11 @@ class DetailView: UIView {
            message.centerYAnchor.constraint(equalTo: self.centerYAnchor),
            message.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
            message.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
-           detailedIcon.topAnchor.constraint(equalTo: self.topAnchor, constant: -30),
-           detailedIcon.widthAnchor.constraint(equalToConstant: 50),
-           detailedIcon.heightAnchor.constraint(equalToConstant: 50)
+           //detailedIcon.topAnchor.constraint(equalTo: self.topAnchor, constant: -30),
+           detailedIcon.widthAnchor.constraint(equalToConstant: 70),
+           detailedIcon.heightAnchor.constraint(equalToConstant: 70),
+           detailedIcon.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+           detailedIcon.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -120)
        ])
    }
 
