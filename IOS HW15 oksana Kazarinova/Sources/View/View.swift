@@ -21,9 +21,9 @@ class View: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .systemGray6
         setupHierarchy()
         setupLayout()
-        self.backgroundColor = .systemGray6
     }
 
     required init?(coder: NSCoder) {
@@ -44,8 +44,4 @@ class View: UIView {
             settingsTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
-
-    // MARK: Configuration
-
-    
 }

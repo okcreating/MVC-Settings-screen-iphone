@@ -59,8 +59,8 @@ final class SettingsModel {
              Setting(cellType: .defaultType, name: .focus, icon: "moon.fill", imageViewColorCode: "#5956d6"),
              Setting(cellType: .defaultType, name: .screenTime, icon: "hourglass", imageViewColorCode: "#5956d6")],
 
-            [Setting(cellType: .defaultType, name: .general, icon: "gear", imageViewColorCode: "#cacace"),
-             Setting(cellType: .defaultType, name: .controlCentre, icon: "switch.2", imageViewColorCode: "#cacace"),
+            [Setting(cellType: .defaultType, name: .general, icon: "gear", imageViewColorCode: "#A9A9A9"),
+             Setting(cellType: .defaultType, name: .controlCentre, icon: "switch.2", imageViewColorCode: "#A9A9A9"),
              Setting(cellType: .defaultType, name: .displayAndBrightness, icon: "textformat.size", imageViewColorCode: "#007aff"),
              Setting(cellType: .defaultType, name: .homeScreen, icon: "Icona_Launchpad", imageViewColorCode: "F4FAFC"),
              Setting(cellType: .defaultType, name: .accessibility, icon: "accessibility", imageViewColorCode: "#007aff"),

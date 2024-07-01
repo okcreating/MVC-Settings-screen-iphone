@@ -15,7 +15,7 @@ class DefaultTableViewCell: UITableViewCell {
         didSet {
             settingName.text = setting?.name.rawValue
             settingIcon.backgroundColor = UIColor.init(hex: setting?.imageViewColorCode ?? "")
-            settingIcon.image = icon.editIcon(imageName: setting?.icon ?? "")
+            setupIcon()
         }
     }
 
@@ -30,6 +30,7 @@ class DefaultTableViewCell: UITableViewCell {
 
     private var icon: UIImage = {
         let image = UIImage()
+
         return image
     }()
 
@@ -68,14 +69,23 @@ class DefaultTableViewCell: UITableViewCell {
             settingIcon.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             settingIcon.topAnchor.constraint(equalTo: self.topAnchor, constant: 6),
             settingIcon.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -6),
-            settingIcon.widthAnchor.constraint(equalToConstant: 35),
-            settingIcon.heightAnchor.constraint(equalToConstant: 35),
+            settingIcon.widthAnchor.constraint(equalToConstant: 30),
+            settingIcon.heightAnchor.constraint(equalToConstant: 30),
 
             settingName.leadingAnchor.constraint(equalTo: settingIcon.trailingAnchor, constant: 20),
             settingName.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             settingName.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5)
         ])
     }
+
+        private func setupIcon() {
+            switch setting?.name {
+            case .blueTooth, .siriAndSearch, .homeScreen:
+                settingIcon.image = UIImage(named: setting?.icon ?? "")
+            default:
+                settingIcon.image = icon.editIcon(imageName: setting?.icon ?? "")
+                }
+            }
 
     // MARK: - Reuse
 
