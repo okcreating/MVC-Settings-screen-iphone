@@ -9,7 +9,7 @@ import UIKit
 
 class DetailView: UIView {
 
-    private var message: UILabel = {
+    lazy var message: UILabel = {
        let label = UILabel()
        label.font = .systemFont(ofSize: 16, weight: .semibold)
        label.textColor = .white
@@ -18,7 +18,7 @@ class DetailView: UIView {
        return label
    }()
 
-    private var detailedIcon: UIImageView = {
+    lazy var detailedIcon: UIImageView = {
         let iconBG = UIImageView()
         iconBG.contentMode = .scaleAspectFit
         iconBG.layer.masksToBounds = true
@@ -31,7 +31,7 @@ class DetailView: UIView {
         return iconBG
     }()
 
-    private lazy var icon: UIImage = {
+    lazy var icon: UIImage = {
         let image = UIImage()
         return image
     }()
@@ -46,7 +46,6 @@ class DetailView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
     }
 
    // MARK: - Setup
@@ -54,7 +53,6 @@ class DetailView: UIView {
    private func setupHierarchy() {
        addSubview(message)
        addSubview(detailedIcon)
-
    }
 
    private func setupLayout() {
@@ -63,7 +61,7 @@ class DetailView: UIView {
            message.centerYAnchor.constraint(equalTo: self.centerYAnchor),
            message.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
            message.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
-           //detailedIcon.topAnchor.constraint(equalTo: self.topAnchor, constant: -30),
+           
            detailedIcon.widthAnchor.constraint(equalToConstant: 70),
            detailedIcon.heightAnchor.constraint(equalToConstant: 70),
            detailedIcon.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -73,8 +71,13 @@ class DetailView: UIView {
 
     func configureView(with model: Setting) {
         message.text = "Thank you. You pressed \(model.name.rawValue)."
-        detailedIcon.image = icon.editIcon(imageName: model.icon)
-        self.backgroundColor = detailedIcon.setBGColor(colorCode: model.imageViewColorCode).backgroundColor
-
+        switch model.name {
+        case .blueTooth, .siriAndSearch, .homeScreen:
+            detailedIcon.image = UIImage(named: model.icon)
+            backgroundColor = .black
+        default:
+            detailedIcon.image = icon.editIcon(imageName: model.icon)
+            backgroundColor = UIColor.init(hex: model.imageViewColorCode)
+        }
     }
 }

@@ -9,9 +9,9 @@ import UIKit
 
 class DetailController: UIViewController {
 
-    var detailedModel: SettingsModel?
+    var detailedModel: Setting?
 
-    private weak var detailedView: DetailView? {
+     weak var detailedView: DetailView? {
         guard isViewLoaded else { return nil }
         return view as? DetailView
     }
@@ -19,14 +19,14 @@ class DetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = DetailView()
-        detailedModel = SettingsModel()
-        
+        cofigureView()
     }
 }
 
-private extension DetailController {
+extension DetailController {
     func cofigureView() {
-
-        
+        guard let models = detailedModel else { return }
+        detailedView?.configureView(with: models )
+        }
     }
-}
+

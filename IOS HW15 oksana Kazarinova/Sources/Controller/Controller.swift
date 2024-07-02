@@ -20,8 +20,6 @@ class Controller: UIViewController {
         super.viewDidLoad()
         view = View()
         model = SettingsModel()
-        title = "Settings"
-        navigationController?.navigationBar.prefersLargeTitles = true
         configure()
     }
 }
@@ -33,6 +31,10 @@ private extension Controller {
         mainView.settingsTableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         mainView.settingsTableView.dataSource = self
         mainView.settingsTableView.delegate = self
+
+        title = "Settings"
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
@@ -48,12 +50,8 @@ extension Controller: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let setting = model?.createModels()[indexPath.section][indexPath.row]
+
         switch setting?.cellType {
-//        case .defaultType:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: DefaultTableViewCell.identifier, for: indexPath) as? DefaultTableViewCell
-//            cell?.setting = model?.createModels()[indexPath.section][indexPath.row]
-//            cell?.accessoryType = .disclosureIndicator
-//            return cell ?? UITableViewCell()
         case .value1Type:
             let cell = tableView.dequeueReusableCell(withIdentifier: Value1TableViewCell.identifier) as? Value1TableViewCell
             cell?.setting = setting
@@ -73,12 +71,13 @@ extension Controller: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let setting = model?.createModels()[indexPath.section][indexPath.row]
         
-        switch model?.createModels()[indexPath.section][indexPath.row].cellType {
+        switch setting?.cellType {
         case .defaultType, .value1Type:
             let detailedController = DetailController()
             tableView.deselectRow(at: indexPath, animated: true)
-            //detailedController.detailedModel = model
+            detailedController.detailedModel = setting
             navigationController?.pushViewController(detailedController, animated: true)
         default:
             return

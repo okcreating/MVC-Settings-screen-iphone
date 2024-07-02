@@ -36,7 +36,7 @@ enum CellType {
     case customType
 }
 
-struct Setting: Hashable {
+struct Setting {
     var cellType: CellType
     var name: SettingsName
     var icon: String
@@ -73,3 +73,5 @@ final class SettingsModel {
         ]
     }
 }
+
+
