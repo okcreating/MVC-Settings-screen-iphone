@@ -30,7 +30,6 @@ class DefaultTableViewCell: UITableViewCell {
 
     private var icon: UIImage = {
         let image = UIImage()
-
         return image
     }()
 
@@ -67,8 +66,6 @@ class DefaultTableViewCell: UITableViewCell {
     private func setupLayout() {
         NSLayoutConstraint.activate([
             settingIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-//            settingIcon.topAnchor.constraint(equalTo: topAnchor, constant: 6),
-//            settingIcon.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6),
             settingIcon.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             settingIcon.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.7),
             settingIcon.widthAnchor.constraint(equalTo: settingIcon.heightAnchor),
@@ -85,8 +82,8 @@ class DefaultTableViewCell: UITableViewCell {
                 settingIcon.image = UIImage(named: setting?.icon ?? "")
             default:
                 settingIcon.image = icon.editIcon(imageName: setting?.icon ?? "")
-                }
             }
+        }
 
     // MARK: - Reuse
 

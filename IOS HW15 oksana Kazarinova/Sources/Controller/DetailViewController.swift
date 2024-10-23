@@ -7,11 +7,11 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailController: UIViewController {
 
-    var detailedModel: SettingsModel?
+    var detailedModel: Setting?
 
-    private weak var detailedView: DetailView? {
+     weak var detailedView: DetailView? {
         guard isViewLoaded else { return nil }
         return view as? DetailView
     }
@@ -19,14 +19,13 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = DetailView()
-        detailedModel = SettingsModel()
-        
+        cofigureView()
     }
 }
 
-private extension DetailViewController {
+extension DetailController {
     func cofigureView() {
-
-        
+        guard let models = detailedModel else { return }
+        detailedView?.configureView(with: models )
     }
 }

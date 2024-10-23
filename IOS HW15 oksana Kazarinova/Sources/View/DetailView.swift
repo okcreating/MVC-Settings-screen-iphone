@@ -46,7 +46,6 @@ class DetailView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
     }
 
    // MARK: - Setup
@@ -73,8 +72,13 @@ class DetailView: UIView {
 
     func configureView(with model: Setting) {
         message.text = "Thank you. You pressed \(model.name.rawValue)."
-        detailedIcon.image = icon.editIcon(imageName: model.icon)
-        self.backgroundColor = detailedIcon.setBGColor(colorCode: model.imageViewColorCode).backgroundColor
-
+        switch model.name {
+        case .blueTooth, .siriAndSearch, .homeScreen:
+            detailedIcon.image = UIImage(named: model.icon)
+            backgroundColor = .black
+        default:
+            detailedIcon.image = icon.editIcon(imageName: model.icon)
+            backgroundColor = UIColor.init(hex: model.imageViewColorCode)
+        }
     }
 }

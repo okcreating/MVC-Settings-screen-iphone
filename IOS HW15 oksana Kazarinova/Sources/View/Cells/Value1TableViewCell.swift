@@ -79,7 +79,6 @@ class Value1TableViewCell: UITableViewCell {
             settingIcon.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.7),
             settingIcon.widthAnchor.constraint(equalTo: settingIcon.heightAnchor),
 
-
             settingName.leadingAnchor.constraint(equalTo: settingIcon.trailingAnchor, constant: 20),
             settingName.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             settingName.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
@@ -96,8 +95,8 @@ class Value1TableViewCell: UITableViewCell {
             settingIcon.image = UIImage(named: setting?.icon ?? "")
         default:
             settingIcon.image = icon.editIcon(imageName: setting?.icon ?? "")
-            }
         }
+    }
 
     // MARK: - Reuse
 

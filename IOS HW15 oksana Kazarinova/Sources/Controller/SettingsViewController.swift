@@ -48,12 +48,8 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let setting = model?.createModels()[indexPath.section][indexPath.row]
+        
         switch setting?.cellType {
-//        case .defaultType:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: DefaultTableViewCell.identifier, for: indexPath) as? DefaultTableViewCell
-//            cell?.setting = model?.createModels()[indexPath.section][indexPath.row]
-//            cell?.accessoryType = .disclosureIndicator
-//            return cell ?? UITableViewCell()
         case .value1Type:
             let cell = tableView.dequeueReusableCell(withIdentifier: Value1TableViewCell.identifier) as? Value1TableViewCell
             cell?.setting = setting
@@ -73,12 +69,12 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let setting = model?.createModels()[indexPath.section][indexPath.row]
         switch model?.createModels()[indexPath.section][indexPath.row].cellType {
         case .defaultType, .value1Type:
-            let detailedController = DetailViewController()
+            let detailedController = DetailController()
             tableView.deselectRow(at: indexPath, animated: true)
-            //detailedController.detailedModel = model
+           detailedController.detailedModel = setting
             navigationController?.pushViewController(detailedController, animated: true)
         default:
             return

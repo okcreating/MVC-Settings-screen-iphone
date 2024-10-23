@@ -79,7 +79,6 @@ class CustomTableViewCell: UITableViewCell {
             settingIcon.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.7),
             settingIcon.widthAnchor.constraint(equalTo: settingIcon.heightAnchor),
 
-
             settingName.leadingAnchor.constraint(equalTo: settingIcon.trailingAnchor, constant: 20),
             settingName.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             settingName.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
