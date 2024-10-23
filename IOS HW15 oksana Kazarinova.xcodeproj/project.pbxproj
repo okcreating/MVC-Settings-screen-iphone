@@ -94,6 +94,7 @@
 		C64100A32C2F4A70002E5E94 /* IOS HW15 oksana Kazarinova */ = {
 			isa = PBXGroup;
 			children = (
+				C64100B82C2F5A01002E5E94 /* App */,
 				C64100B92C2F5A12002E5E94 /* Sources */,
 				C64100BA2C2F5A27002E5E94 /* Resources */,
 			);
@@ -115,7 +116,6 @@
 				C64100BD2C2F5C4B002E5E94 /* Controller */,
 				C64100BC2C2F5C34002E5E94 /* View */,
 				C64100BB2C2F5C2B002E5E94 /* Model */,
-				C64100B82C2F5A01002E5E94 /* App */,
 			);
 			path = Sources;
 			sourceTree = "<group>";

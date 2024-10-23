@@ -67,7 +67,7 @@ class DefaultTableViewCell: UITableViewCell {
     private func setupLayout() {
         NSLayoutConstraint.activate([
             settingIcon.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            settingIcon.topAnchor.constraint(equalTo: self.topAnchor, constant: 4),
+            settingIcon.topAnchor.constraint(equalTo: self.topAnchor, constant: 6),
             settingIcon.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -4),
             settingIcon.widthAnchor.constraint(equalToConstant: 30),
             settingIcon.heightAnchor.constraint(equalToConstant: 30),
