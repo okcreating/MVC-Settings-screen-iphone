@@ -15,13 +15,13 @@
 		C639D6E72C3041080009C7DA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C639D6E62C3041080009C7DA /* UIColorExtension.swift */; };
 		C64100A52C2F4A70002E5E94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64100A42C2F4A70002E5E94 /* AppDelegate.swift */; };
 		C64100A72C2F4A70002E5E94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64100A62C2F4A70002E5E94 /* SceneDelegate.swift */; };
-		C64100A92C2F4A70002E5E94 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64100A82C2F4A70002E5E94 /* Controller.swift */; };
+		C64100A92C2F4A70002E5E94 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64100A82C2F4A70002E5E94 /* SettingsViewController.swift */; };
 		C64100AE2C2F4A71002E5E94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64100AD2C2F4A71002E5E94 /* Assets.xcassets */; };
 		C64100B12C2F4A71002E5E94 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C64100B02C2F4A71002E5E94 /* Base */; };
 		C64100BF2C2F5CAA002E5E94 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64100BE2C2F5CAA002E5E94 /* Model.swift */; };
-		C64100C12C2F5EDF002E5E94 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64100C02C2F5EDF002E5E94 /* View.swift */; };
+		C64100C12C2F5EDF002E5E94 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64100C02C2F5EDF002E5E94 /* SettingsView.swift */; };
 		C64100C32C2F5F3C002E5E94 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64100C22C2F5F3C002E5E94 /* DetailView.swift */; };
-		C64100C52C2F5F61002E5E94 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64100C42C2F5F61002E5E94 /* DetailController.swift */; };
+		C64100C52C2F5F61002E5E94 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64100C42C2F5F61002E5E94 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,14 +34,14 @@
 		C64100A12C2F4A70002E5E94 /* IOS HW15 oksana Kazarinova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS HW15 oksana Kazarinova.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64100A42C2F4A70002E5E94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C64100A62C2F4A70002E5E94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C64100A82C2F4A70002E5E94 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		C64100A82C2F4A70002E5E94 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C64100AD2C2F4A71002E5E94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C64100B02C2F4A71002E5E94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C64100B22C2F4A71002E5E94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64100BE2C2F5CAA002E5E94 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		C64100C02C2F5EDF002E5E94 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		C64100C02C2F5EDF002E5E94 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C64100C22C2F5F3C002E5E94 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		C64100C42C2F5F61002E5E94 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		C64100C42C2F5F61002E5E94 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +94,7 @@
 		C64100A32C2F4A70002E5E94 /* IOS HW15 oksana Kazarinova */ = {
 			isa = PBXGroup;
 			children = (
+				C64100B82C2F5A01002E5E94 /* App */,
 				C64100B92C2F5A12002E5E94 /* Sources */,
 				C64100BA2C2F5A27002E5E94 /* Resources */,
 			);
@@ -112,10 +113,9 @@
 		C64100B92C2F5A12002E5E94 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				C64100BD2C2F5C4B002E5E94 /* Controller */,
-				C64100BC2C2F5C34002E5E94 /* View */,
 				C64100BB2C2F5C2B002E5E94 /* Model */,
-				C64100B82C2F5A01002E5E94 /* App */,
+				C64100BC2C2F5C34002E5E94 /* View */,
+				C64100BD2C2F5C4B002E5E94 /* Controller */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -141,7 +141,7 @@
 		C64100BC2C2F5C34002E5E94 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C64100C02C2F5EDF002E5E94 /* View.swift */,
+				C64100C02C2F5EDF002E5E94 /* SettingsView.swift */,
 				C64100C22C2F5F3C002E5E94 /* DetailView.swift */,
 				C6395AC12C309E6F008CF341 /* Cells */,
 				C6395AC02C308552008CF341 /* Extensions */,
@@ -152,8 +152,8 @@
 		C64100BD2C2F5C4B002E5E94 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C64100A82C2F4A70002E5E94 /* Controller.swift */,
-				C64100C42C2F5F61002E5E94 /* DetailController.swift */,
+				C64100A82C2F4A70002E5E94 /* SettingsViewController.swift */,
+				C64100C42C2F5F61002E5E94 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -228,11 +228,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C64100A92C2F4A70002E5E94 /* Controller.swift in Sources */,
-				C64100C52C2F5F61002E5E94 /* DetailController.swift in Sources */,
+				C64100A92C2F4A70002E5E94 /* SettingsViewController.swift in Sources */,
+				C64100C52C2F5F61002E5E94 /* DetailViewController.swift in Sources */,
 				C64100C32C2F5F3C002E5E94 /* DetailView.swift in Sources */,
 				C64100A52C2F4A70002E5E94 /* AppDelegate.swift in Sources */,
-				C64100C12C2F5EDF002E5E94 /* View.swift in Sources */,
+				C64100C12C2F5EDF002E5E94 /* SettingsView.swift in Sources */,
 				C639D6E52C303EDC0009C7DA /* UIImageViewExtension.swift in Sources */,
 				C6395AC32C309EE6008CF341 /* DefaultTableViewCell.swift in Sources */,
 				C64100A72C2F4A70002E5E94 /* SceneDelegate.swift in Sources */,

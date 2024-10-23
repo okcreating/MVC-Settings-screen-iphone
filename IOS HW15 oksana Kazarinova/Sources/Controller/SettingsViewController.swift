@@ -7,18 +7,18 @@
 
 import UIKit
 
-class Controller: UIViewController {
+class SettingsViewController: UIViewController {
 
     var model: SettingsModel?
 
-    private weak var mainView: View! {
+    private weak var mainView: SettingsView! {
         guard isViewLoaded else { return nil }
-        return (view as? View)
+        return (view as? SettingsView)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = View()
+        view = SettingsView()
         model = SettingsModel()
         title = "Settings"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -26,7 +26,7 @@ class Controller: UIViewController {
     }
 }
 
-private extension Controller {
+private extension SettingsViewController {
     func configure() {
         mainView.settingsTableView.register(DefaultTableViewCell.self, forCellReuseIdentifier: DefaultTableViewCell.identifier)
         mainView.settingsTableView.register(Value1TableViewCell.self, forCellReuseIdentifier: Value1TableViewCell.identifier)
@@ -36,7 +36,7 @@ private extension Controller {
     }
 }
 
-extension Controller: UITableViewDataSource, UITableViewDelegate {
+extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         model?.createModels()[section].count ?? 0
@@ -76,7 +76,7 @@ extension Controller: UITableViewDataSource, UITableViewDelegate {
         
         switch model?.createModels()[indexPath.section][indexPath.row].cellType {
         case .defaultType, .value1Type:
-            let detailedController = DetailController()
+            let detailedController = DetailViewController()
             tableView.deselectRow(at: indexPath, animated: true)
             //detailedController.detailedModel = model
             navigationController?.pushViewController(detailedController, animated: true)

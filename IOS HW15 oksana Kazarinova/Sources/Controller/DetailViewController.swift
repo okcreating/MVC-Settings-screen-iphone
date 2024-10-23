@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailController: UIViewController {
+class DetailViewController: UIViewController {
 
     var detailedModel: SettingsModel?
 
@@ -24,7 +24,7 @@ class DetailController: UIViewController {
     }
 }
 
-private extension DetailController {
+private extension DetailViewController {
     func cofigureView() {
 
         

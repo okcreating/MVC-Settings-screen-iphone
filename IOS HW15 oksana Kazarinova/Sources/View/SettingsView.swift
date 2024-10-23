@@ -7,7 +7,7 @@
 
 import UIKit
 
-class View: UIView {
+class SettingsView: UIView {
 
     // MARK: - Outlets
 
