@@ -35,12 +35,12 @@ class Value1TableViewCell: UITableViewCell {
      }()
 
      private var settingIcon: UIImageView = {
-         let iconBG = UIImageView()
+         let iconBG = UIImageView(frame: CGRect(x: 4, y: 4, width: 30, height: 30))
          iconBG.contentMode = .scaleAspectFit
          iconBG.clipsToBounds = true
          iconBG.layer.masksToBounds = true
          iconBG.layer.cornerRadius = 5
-         iconBG.translatesAutoresizingMaskIntoConstraints = false
+        // iconBG.translatesAutoresizingMaskIntoConstraints = false
          return iconBG
      }()
 
@@ -75,8 +75,10 @@ class Value1TableViewCell: UITableViewCell {
             settingIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
 //            settingIcon.topAnchor.constraint(equalTo: topAnchor, constant: 6),
 //            settingIcon.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6),
-            settingIcon.widthAnchor.constraint(equalToConstant: 30),
-            settingIcon.heightAnchor.constraint(equalToConstant: 30),
+            settingIcon.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            settingIcon.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.7),
+            settingIcon.widthAnchor.constraint(equalTo: settingIcon.heightAnchor),
+
 
             settingName.leadingAnchor.constraint(equalTo: settingIcon.trailingAnchor, constant: 20),
             settingName.topAnchor.constraint(equalTo: topAnchor, constant: 5),

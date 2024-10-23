@@ -35,12 +35,12 @@ class DefaultTableViewCell: UITableViewCell {
     }()
 
     private var settingIcon: UIImageView = {
-        let iconBG = UIImageView()
+        let iconBG = UIImageView(frame: CGRect(x: 4, y: 4, width: 30, height: 30))
         iconBG.contentMode = .scaleAspectFit
         iconBG.layer.masksToBounds = true
         iconBG.clipsToBounds = true
         iconBG.layer.cornerRadius = 5
-        iconBG.translatesAutoresizingMaskIntoConstraints = false
+        //iconBG.translatesAutoresizingMaskIntoConstraints = false
         return iconBG
     }()
 
@@ -48,7 +48,7 @@ class DefaultTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: DefaultTableViewCell.identifier)
-        icon.withTintColor(.white, renderingMode: .automatic)
+       icon.withTintColor(.white, renderingMode: .automatic)
         setupHierarchy()
         setupLayout()
     }
@@ -70,8 +70,8 @@ class DefaultTableViewCell: UITableViewCell {
 //            settingIcon.topAnchor.constraint(equalTo: topAnchor, constant: 6),
 //            settingIcon.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6),
             settingIcon.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            settingIcon.widthAnchor.constraint(equalToConstant: 30),
-            settingIcon.heightAnchor.constraint(equalToConstant: 30),
+            settingIcon.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.7),
+            settingIcon.widthAnchor.constraint(equalTo: settingIcon.heightAnchor),
 
             settingName.leadingAnchor.constraint(equalTo: settingIcon.trailingAnchor, constant: 20),
             settingName.topAnchor.constraint(equalTo: topAnchor, constant: 5),
